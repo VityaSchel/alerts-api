@@ -1,5 +1,9 @@
 # alerts-api — API wrapper for Donation Alerts written in NodeJS with promises support
 
+![GitHub top language](https://img.shields.io/github/languages/top/VityaSchel/alerts-api)
+![GitHub](https://img.shields.io/github/license/VityaSchel/alerts-api)
+![npm](https://img.shields.io/npm/dm/VityaSchel/alerts-api)
+
 There was no library so I did it myself. Fuck Mail.ru and their developers. PRs are welcome, email me (vityaschel@utidteam.com) if you want to maintain this repository.
 
 Currently supports only 2 methods: getUser; getDonations() with pagination and recursive searching, do not supports Merchandises API, do not supports polls, do not supports custom alerts.
@@ -126,6 +130,7 @@ Fortunately for you, I screenshoted all scopes and sent it to them when document
 Scopes may not be up to date, anyway, better than literally nothing.
 
 Scope | Description
+----- | -----------
 oauth-user-show | Obtain profile data
 oauth-donation-subscribe | Subscribe to new donation alerts
 oauth-donation-index | View donations
