@@ -2,7 +2,7 @@
 
 ![GitHub top language](https://img.shields.io/github/languages/top/VityaSchel/alerts-api)
 ![GitHub](https://img.shields.io/github/license/VityaSchel/alerts-api)
-![npm](https://img.shields.io/npm/dm/VityaSchel/alerts-api)
+![npm](https://img.shields.io/npm/dw/alerts-api)
 
 There was no library so I did it myself. Fuck Mail.ru and their developers. PRs are welcome, email me (vityaschel@utidteam.com) if you want to maintain this repository.
 

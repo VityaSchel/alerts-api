@@ -1,6 +1,6 @@
 {
   "name": "alerts-api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Donation Alerts API wrapper for Node.JS which supports ES6 promises [BETA]",
   "main": "index.js",
   "scripts": {
@@ -14,6 +14,10 @@
     "wrapper",
     "api"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VityaSchel/alerts-api"
+  },
   "author": "vityaschel <vityaschel@utidteam.com> (https://vityaschel.utidteam.com/)",
   "license": "MIT",
   "dependencies": {
