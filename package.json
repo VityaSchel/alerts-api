@@ -1,0 +1,19 @@
+{
+  "name": "alerts-api",
+  "version": "1.0.0",
+  "description": "Donation Alerts API wrapper for Node.JS with full coverage which supports ES6 promises [BETA]",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "donation-alerts",
+    "donations",
+    "donationalerts",
+    "api-wrapper",
+    "wrapper",
+    "api"
+  ],
+  "author": "vityaschel <vityaschel@utidteam.com> (https://vityaschel.utidteam.com/)",
+  "license": "MIT"
+}
