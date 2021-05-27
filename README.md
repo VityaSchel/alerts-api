@@ -59,6 +59,7 @@ Constructor accepts exactly 1 argument: config object
 - STATIC ASYNC **getAccessToken(config)**
   - Exchanges authorization code on access token needed for every API request
   - Method accepts exactly 1 argument: config object
+  - Config object example:
   - ```javascript
     {
       clientID: 690,                        // required; must be a number; app id in your app's settings;
@@ -67,11 +68,21 @@ Constructor accepts exactly 1 argument: config object
       code: 'def502...e8d',                 // required; must be a string; code you got from oauth authorization after redirection
     }
     ```
+  - Returned object example:
+  - ```javascript
+    {
+      token_type: 'Bearer',
+      expires_in: 61235,
+      access_token: 'RDY...7N',
+      refreshToken: 'd50...bc'
+    }
+    ```
 
 - ASYNC **refreshToken(config)**
   - Refreshes access token to prevent expiring by exchanging refresh_token
   - Method accepts exactly 1 argument: config object
-  - ** DO NOT CHANGE SCOPES! USE EXACTLY THE SAME SCOPES YOU USED FOR OBRAINING AUTHORZATION CODE!!! **
+  - DO NOT CHANGE SCOPES! USE EXACTLY THE SAME SCOPES YOU USED FOR OBTAINING AUTHORZATION CODE!!!
+  - Config object example:
   - ```javascript
     {
       clientID: 690,                        // required; must be a number; app id in your app's settings;
@@ -80,9 +91,32 @@ Constructor accepts exactly 1 argument: config object
       scopes: ['oauth-user-show'],          // required; must be an array of strings; possible scopes are below in this documentation
     }
     ```
+  - Returned object example:
+  - ```javascript
+    {
+      token_type: 'Bearer',
+      expires_in: 61235,
+      access_token: 'RDY...7N',
+      refreshToken: 'd50...bc'
+    }
+    ```
 
 - ASYNC **getUser()**
   - Method returns user information (endpoint: https://www.donationalerts.com/api/vXXX/user/oauth)
+  - Returned object example:
+  - ```javascript
+      {
+        data: {
+          id: 918237,
+          code: 'vityaschel',
+          name: 'VityaSchel',
+          avatar: 'https://static-cdn.jtvnw.net/user-default-pictures-uv/41780b5a-def8-11e9-94d9-784f43822e80-profile_image-300x300.png',
+          email: 'vityaschel@utidteam.com',
+          language: 'en_US',
+          socket_connection_token: 'sfysjdhgaskduqhtwldiqdguaskdajsd'
+      }
+    }
+    ```
 
 - ASYNC **getDonations(page, raw)**
   - Method returns latest donations (endpoint: https://www.donationalerts.com/api/v1/alerts/donations)
@@ -93,6 +127,7 @@ Constructor accepts exactly 1 argument: config object
   - data will always be array
   - use .next() and .prev() functions to fetch new pages (use with await/.then)
   - if there is no next/previous page, no function will be in response
+  - Returned object example:
   - ```javascript
     {
       data: [
@@ -120,6 +155,24 @@ Constructor accepts exactly 1 argument: config object
   - Method searching through every donation and returns the ones with term included() in message field
   - pageLimit is optional; defaults to 0 (no limit)
   - caseSensetive is optional; defaults to true!!
+  - Returned object example:
+  - ```javascript
+    [
+      id: 123456,
+      name: 'donation',
+      username: 'user name',
+      recipient_name: 'your name',
+      message: 'most valuable in donations',
+      message_type: 'text',
+      payin_system: { title: 'Bank card RUB' },
+      amount: 24,
+      currency: 'RUB',
+      is_shown: 1,
+      amount_in_user_currency: 24,
+      created_at: '2019-01-17 17:17:09',
+      shown_at: null
+    ]
+    ```
 
 ## Bonus (all scopes)
 
