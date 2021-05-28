@@ -27,7 +27,7 @@ $ npm i alerts-api
 OR
 
 ```
-yarn add alerts-api
+$ yarn add alerts-api
 ```
 
 ## Usage
