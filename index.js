@@ -2,11 +2,18 @@ const fetch = require('node-fetch')
 
 const ERRORS = {
   noAccessToken: 'AlertsAPI: No access token specified in config object in contructor',
-  versionVariableType: 'AlertsAPI: Version number specified in config object in contstructor must be number'
+  versionVariableType: 'AlertsAPI: Version number specified in config object in contstructor must be number',
+  alertInstanceIncorrect: 'AlertsAPI: Provided alert to sendCustomAlert must be an instance of CustomAlert class',
 }
 const DEFAULT_API_VERSION = 1
 
 class AlertsAPI {
+  static CustomAlert = class CustomAlert {
+    constructor(config) {
+      this.config = config
+    }
+  }
+
   constructor(config) {
     this.access_token = config.access_token
     if(config.access_token === undefined || config.access_token === ''){ throw ERRORS.noAccessToken }
@@ -94,7 +101,26 @@ class AlertsAPI {
     }
     return donationsFiltered
   }
-}
 
+  async sendCustomAlert(alert) {
+    let isInstance = false
+    if(typeof alert !== 'object'){ throw ERRORS.alertInstanceIncorrect }
+    try {
+      isInstance = alert instanceof AlertsAPI.CustomAlert
+    } catch(e) {
+      throw ERRORS.alertInstanceIncorrect
+    }
+    if(!isInstance) { throw ERRORS.alertInstanceIncorrect }
+    let request = await fetch(`${this.basePath}/custom_alert`, {
+      method: 'POST',
+      body: JSON.stringify({
+        external_id: Math.floor(Math.random()*Number.MAX_SAFE_INTEGER),
+        ...alert.config
+      }),
+      headers: { 'Authorization': `Bearer ${this.access_token}`, 'Content-Type': 'application/json' }
+    })
+    return await request.json()
+  }
+}
 
 module.exports = AlertsAPI

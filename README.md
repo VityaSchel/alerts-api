@@ -6,7 +6,18 @@
 
 There was no library so I did it myself. Fuck Mail.ru and their developers.
 
-Currently supports OAuth link generation, access token generation, refreshing tokens, user profile information, latest donations with pagination and recursive searching. Does not support Merchandises API, polls, custom alerts.
+Feature matrix:
+
+✅ Latest donations with pagination
+✅ Retreiving user profile information
+✅ Recursive searching through donations messages
+✅ Custom alerts (reusable)
+✅ Refreshing tokens
+✅ Access token generation
+✅ OAuth link generation
+❌ Merchandise API
+❌ Polls
+❌ Centrifugo
 
 ## Installation
 
@@ -179,6 +190,32 @@ Constructor accepts exactly 1 argument: config object
       created_at: '2019-01-17 17:17:09',
       shown_at: null
     ]
+    ```
+
+- ASYNC **sendCustomAlert(alert)**
+  - Method sends custom alert to user (endpoint: https://www.donationalerts.com/api/v1/custom_alert)
+  - alert is an instance of CustomAlert class created with constructor with specifig config (see api reference below)
+  - Usage example:
+  - ```javascript
+    await sendCustomAlert(myAlert)
+    ```
+
+- class **CustomAlert** inside AlertsAPI class
+  - Use it for sendCustomAlert method (see above)
+  - Constructor accepts exactly 1 argument: object
+  - external_id is generated automatically from 0 up to Number.MAX_SAFE_INTEGER
+  - ```javascript
+    {
+      header: 'Text',                             // optional; defaults to ''; up to 255 characters long string that will be displayed as a header
+      message: 'Text',                            // optional; defaults to ''; Up to 300 characters long string that will be displayed inside the message box
+      is_shown: 1,                                // optional; defaults to 1; A value containing 0 or 1. Determines whether the alert should be displayed or not.
+      image_url: 'https://example.com/image.png', // optional; defaults to ''; Up to 255 characters long URL to the image file that will displayed along with the custom alert
+      sound_url: 'https://example.com/sound.mp3'  // optional; defaults to ''; Up to 255 characters long URL to the sound file that will played when displaying the custom
+    }
+    ```
+  - Example of creation instance:
+  - ```javascript
+    let myAlert = new AlertsAPI.CustomAlert({ header: 'My Alert', message: 'Hello world!' })
     ```
 
 ## More examples
