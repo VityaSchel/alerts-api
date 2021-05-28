@@ -4,21 +4,28 @@
 ![GitHub](https://img.shields.io/github/license/VityaSchel/alerts-api)
 ![npm](https://img.shields.io/npm/dw/alerts-api)
 
-There was no library so I did it myself. Fuck Mail.ru and their developers. PRs are welcome, email me (vityaschel@utidteam.com) if you want to maintain this repository.
+There was no library so I did it myself. Fuck Mail.ru and their developers.
 
-Currently supports only 2 methods: getUser; getDonations() with pagination and recursive searching, do not supports Merchandises API, do not supports polls, do not supports custom alerts.
+Currently supports OAuth link generation, access token generation, refreshing tokens, user profile information, latest donations with pagination and recursive searching. Does not support Merchandises API, polls, custom alerts.
 
 ## Installation
 
-`$ npm i alerts-api`
+```
+$ npm i alerts-api
+```
+
+OR
+
+```
+yarn add alerts-api
+```
 
 ## Usage
 
 ```javascript
 const AlertsAPI = require('alerts-api')
-/* OR USE ES6 IMPORT:
+/*    OR USE ES6 IMPORT:   */
 import AlertsAPI from 'alerts-api'
-*/
 
 const donationAlerts = new AlertsAPI({ access_token: '' })
 
@@ -182,19 +189,8 @@ Constructor accepts exactly 1 argument: config object
 - [Searching for specific email through all donations](https://github.com/VityaSchel/alerts-api/blob/master/examples/searching_for_specific_email.js)
 - [Searching every donation with amount >= 228](https://github.com/VityaSchel/alerts-api/blob/master/examples/searching_for_amount.js)
 
-## Bonus (all scopes)
+## Contribution
 
-Since mailru is piece of garbage, trash, autists, dcp, patau, dodick, just dicks, ducks, idiots, motherfuckers, thieves, worst place to work if you are programming, they fucked up everything including documentation.
+Please maintain this repository please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please please 🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏  🙏
 
-Fortunately for you, I screenshoted all scopes and sent it to them when documentation was fine.
-
-Scopes may not be up to date, anyway, better than literally nothing.
-
-Scope | Description
------ | -----------
-oauth-user-show | Obtain profile data
-oauth-donation-subscribe | Subscribe to new donation alerts
-oauth-donation-index | View donations
-oauth-custom_alert-store | Create custom alerts
-oauth-goal-subscribe | Subscribe to donation goals updates
-oauth-poll-subscribe | Subscribe to polls updates
+PRs are welcome, email me (vityaschel@utidteam.com) if you want to maintain this repository.
