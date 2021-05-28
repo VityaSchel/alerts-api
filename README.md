@@ -8,16 +8,15 @@ There was no library so I did it myself. Fuck Mail.ru and their developers.
 
 Feature matrix:
 
-✅ Latest donations with pagination
-✅ Retreiving user profile information
-✅ Recursive searching through donations messages
-✅ Custom alerts (reusable)
-✅ Refreshing tokens
-✅ Access token generation
-✅ OAuth link generation
-❌ Merchandise API
-❌ Polls
-❌ Centrifugo
+✅ Latest donations with pagination\
+✅ Retreiving user profile information\
+✅ Recursive searching through donations messages\
+✅ Custom alerts (reusable)\
+✅ Refreshing tokens\
+✅ Access token generation\
+✅ OAuth link generation\
+❌ Merchandise API\
+❌ Centrifugo & Polls updates
 
 ## Installation
 
