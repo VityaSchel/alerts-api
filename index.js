@@ -16,7 +16,7 @@ class AlertsAPI {
 
   static generateOauthLink(config) {
     let scopes = config.scopes.join(' ')
-    return `https://www.donationalerts.com/oauth/authorize?client_id=${config.clientID}&redirect_uri=${config.redirectURI}&response_type=code&scope=${scopes}`
+    return `https://www.donationalerts.com/oauth/authorize?client_id=${config.clientID}&redirect_uri=${encodeURI(config.redirectURI)}&response_type=code&scope=${encodeURI(scopes)}`
   }
 
   static async getAccessToken(config) {

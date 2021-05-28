@@ -160,7 +160,7 @@ Constructor accepts exactly 1 argument: config object
     [
       id: 123456,
       name: 'donation',
-      username: 'user name',
+      username: 'donator`s name',
       recipient_name: 'your name',
       message: 'most valuable in donations',
       message_type: 'text',
@@ -173,6 +173,14 @@ Constructor accepts exactly 1 argument: config object
       shown_at: null
     ]
     ```
+
+## More examples
+
+- [Generating OAuth authorization link](https://github.com/VityaSchel/alerts-api/blob/master/examples/oauth_link_generation.js)
+- [Obtaining access token by exchanging authorization code](https://github.com/VityaSchel/alerts-api/blob/master/examples/access_token_exchanging.js)
+- [Collecting user profile](https://github.com/VityaSchel/alerts-api/blob/master/examples/collecting_user_profile.js)
+- [Searching for specific email through all donations](https://github.com/VityaSchel/alerts-api/blob/master/examples/searching_for_specific_email.js)
+- [Searching every donation with amount >= 228](https://github.com/VityaSchel/alerts-api/blob/master/examples/searching_for_amount.js)
 
 ## Bonus (all scopes)
 

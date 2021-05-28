@@ -1,6 +1,6 @@
 {
   "name": "alerts-api",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Donation Alerts API wrapper for Node.JS which supports ES6 promises [BETA]",
   "main": "index.js",
   "scripts": {
